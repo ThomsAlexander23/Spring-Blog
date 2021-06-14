@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>result of guessing game</title>
+</head>
+<body>
+<h1>You guessed <span th:text="${num}"></span></h1>
+<h2>The actual number was <span th:text="${random}"></span></h2>
+<th:block th:if="${num == random}">
+    <h1>You rock your a winner!</h1>
+</th:block>
+
+<th:block th:if="${num != random}">
+    <h1>You are not nostradamus!</h1>
+    <p>better luck next time!</p>
+</th:block>
+
+</body>
+</html>
