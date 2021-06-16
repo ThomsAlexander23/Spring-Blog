@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit your selected post</title>
+</head>
+<body>
+<h1>Edit your selected post</h1>
+
+<div th:block>
+    <form action="/posts/save" th:object="${post}" method="post">
+        <input type="text" th:field="*{title}" th:value="${post.title}">
+        <input type="text" th:field="*{body}" th:value="${post.body}">
+        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{user}">
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+</body>
+</html>

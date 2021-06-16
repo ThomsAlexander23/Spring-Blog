@@ -6,8 +6,12 @@
 </head>
 <body>
 <h1>This is the post you picked out</h1>
-
 <h4 th:text="${post.title}"></h4>
 <p th:text="${post.body}"></p>
+<form action="view/edit" method="post">
+    <input type="hidden" name="editPost" th:value="${post.id}">
+    <button type="submit">Edit</button>
+</form>
+
 </body>
 </html>
